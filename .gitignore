@@ -1,1 +1,9 @@
 *.env
+*instabot
+*followed
+*friends
+*skipped
+*unfollowed
+*whitelist
+*blacklist
+*chytry
