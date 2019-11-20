@@ -48,44 +48,24 @@ def get_check_followers(username_of_participants):
     return users_all_done
 
 if __name__ == '__main__':
-    #load .env file
     load_dotenv()
-
-    #get variable from .env file
     secret_user_name = os.getenv("INSTAGRAM_USER_NAME")
-    sercer_user_password = os.getenv("INSTAGRAM_PASSWORD")
+    secret_user_password = os.getenv("INSTAGRAM_PASSWORD")
 
-    #conection to instabot
     bot = Bot()
+    bot.login(username=secret_user_name, password=secret_user_password)
 
-    #login in your insta account
-    bot.login(username=secret_user_name, password=sercer_user_password)
-
-    #create a describe arpgparse paramter
     parser = argparse.ArgumentParser(
         description='Проверяет, кто выполнил условие конкурса в инстаграме'
     )
     parser.add_argument('user_id', help='Введите ссылку на пост розыграша')
     args = parser.parse_args()
 
-    #get user_id
     user_id = bot.get_media_id_from_link(args.user_id)
-
-    #get comments from user_id
     user_comments = bot.get_media_comments(user_id)
-
-    #get users, who leaved comment
     users = get_search(user_comments)
-
-    #get list of username
     username_and_id = get_users_id_username(users)
-
-    #get users, who liked
     all_users_who_liked = bot.get_media_likers(user_id)
-
-    #get user, who made all contributions
     username_of_participants = get_liked_and_commented(username_and_id)
-
-    #print out result
     check_followers = get_username_of_participants(username_of_participants)
     print(get_check_followers(check_followers))
