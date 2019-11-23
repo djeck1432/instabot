@@ -7,3 +7,8 @@
 *friends.txt
 *skipped.txt
 *whitelist.txt
+*idea
+*blacklist.txt
+*env
+*.DS_Store
+*config
