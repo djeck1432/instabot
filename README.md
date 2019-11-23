@@ -20,6 +20,16 @@ git clone https://github.com/djeck1432/instabot.git
 ```
 cd instabot
 ```
+Что бы избежать конфликт версий библиотек  в Python, установим виртуальное окружение: <br>
+```
+pip3 install virtualenv
+```
+Следующим шагом, создадим виртуальное окружение : <br>
+```
+python3 -m venv env 
+```
+где ```env``` - название, оно может быть любым <br>
+
 Для работы, нам нужно включить виртуальное окружение, следующий шаг: 
 
 ```
@@ -58,8 +68,24 @@ def get_check_followers(username_of_participants):
 ['vyvyonthatbeat', 'betweenballoons', 'wanderfordelicious', 'wong.foodie', 'galaxyoverlord', 'exobrandi', 'neverneutral', 'sundaeonasunday_', 'mariseeezy', 'bvcktrack', 'worldismymenu', '_cfooddiet', 'chips_chipster', 'foodiema', 'foodandsachi', 'createwithmi', 'louie.the.foodie']
 2019-11-20 19:44:55,171 - INFO - Total requests: 208
 ```
-Где ```['vyvyonthatbeat', 'betweenballoons', 'wanderfordelicious', 'wong.foodie', 'galaxyoverlord', 'exobrandi', 'neverneutral', 'sundaeonasunday_', 'mariseeezy', 'bvcktrack', 'worldismymenu', '_cfooddiet', 'chips_chipster', 'foodiema', 'foodandsachi', 'createwithmi', 'louie.the.foodie']``` - это список участников, которые выполнили условия конкурса. 
+Где ```['vyvyonthatbeat', 'betweenballoons', 'wanderfordelicious', 'wong.foodie', 'galaxyoverlord', 'exobrandi', 'neverneutral', 'sundaeonasunday_', 'mariseeezy', 'bvcktrack', 'worldismymenu', '_cfooddiet', 'chips_chipster', 'foodiema', 'foodandsachi', 'createwithmi', 'louie.the.foodie']``` - это список участников, которые выполнили условия конкурса.
 
+# Регулярные выражение и основные переменные 
+В коде, для поиска комментариев, которые выполнили условие, мы используем регулярные выражение :
+```
+(?:@)([A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)
+```
+первоисточник и более расширенное описано здесь: <br>
+<a href='https://blog.jstassen.com/2016/03/code-regex-for-instagram-username-and-hashtags/'>https://blog.jstassen.com/2016/03/code-regex-for-instagram-username-and-hashtags/</a><br>
+
+```secret_user_name``` - логин InstagramPage;
+```secret_user_password``` - пароль InstagramPage;
+```user_comments``` - комментарии, которые оставили под постом о розыгрыше;
+ ```users``` - nicknames участников конкурса; 
+ ```usernames_and_ids``` - nicknames и их id;
+ ```all_users_who_liked ``` - участники,которые поставили лайк под постом розыгрыша;
+ ```username_of_participants ``` - участники, которые взяли участие в розыгрыше и выполнили 2 условия из 3(оставили комментарий и лайкнули);
+```check_followers``` - юзеры, которые подписаны на страницу, где проходит розыгрыш;
 
 
 
