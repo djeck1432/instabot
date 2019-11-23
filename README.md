@@ -78,14 +78,14 @@ def get_check_followers(username_of_participants):
 первоисточник и более расширенное описано здесь: <br>
 <a href='https://blog.jstassen.com/2016/03/code-regex-for-instagram-username-and-hashtags/'>https://blog.jstassen.com/2016/03/code-regex-for-instagram-username-and-hashtags/</a><br>
 
-```secret_user_name``` - логин InstagramPage;
-```secret_user_password``` - пароль InstagramPage;
-```user_comments``` - комментарии, которые оставили под постом о розыгрыше;
- ```users``` - nicknames участников конкурса; 
- ```usernames_and_ids``` - nicknames и их id;
- ```all_users_who_liked ``` - участники,которые поставили лайк под постом розыгрыша;
- ```username_of_participants ``` - участники, которые взяли участие в розыгрыше и выполнили 2 условия из 3(оставили комментарий и лайкнули);
-```check_followers``` - юзеры, которые подписаны на страницу, где проходит розыгрыш;
+```secret_user_name``` - логин InstagramPage;<br>
+```secret_user_password``` - пароль InstagramPage;<br>
+```user_comments``` - комментарии, которые оставили под постом о розыгрыше;<br>
+ ```users``` - nicknames участников конкурса; <br>
+ ```usernames_and_ids``` - nicknames и их id;<br>
+ ```all_users_who_liked ``` - участники,которые поставили лайк под постом розыгрыша;<br>
+ ```username_of_participants ``` - участники, которые взяли участие в розыгрыше и выполнили 2 условия из 3(оставили комментарий и лайкнули);<br>
+```check_followers``` - юзеры, которые подписаны на страницу, где проходит розыгрыш;<br>
 
 
 
