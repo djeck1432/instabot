@@ -5,11 +5,14 @@ import re
 import os
 
 
-
+# В коде, для поиска комментариев, которые выполнили условие, мы используем регулярные выражение :
+# (?:@)([A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)
+# первоисточник и более расширенное описано здесь: 
+#https://blog.jstassen.com/2016/03/code-regex-for-instagram-username-and-hashtags/
 def get_comments(comments):
   comments_from_competition = []
   for comment in comments:
-    participants = re.findall('(?:@)([A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)',comment['text'])
+    participants = re.findall(r'(?:@)([A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)',comment['text'])
     comments_from_competition.append([comment['user_id'],participants])
   return comments_from_competition
 
@@ -39,7 +42,7 @@ def get_username_of_participants(liked_and_commented):
         username_of_participants.append(username)
     return username_of_participants
 
-def get_check_followers(username_of_participants):
+def check_followers(username_of_participants):
     main_instagram_followers = bot.get_user_followers('beautybar.rus')
     users_all_done = []
     for username in username_of_participants:
@@ -68,5 +71,5 @@ if __name__ == '__main__':
     all_users_who_liked = bot.get_media_likers(user_id)
     username_of_participants = get_liked_and_commented(usernames_and_ids)
     check_followers = get_username_of_participants(username_of_participants)
-    print(get_check_followers(check_followers))
+    print(check_followers(check_followers))
 
