@@ -43,26 +43,12 @@ pip3 install requirements.txt
 ```
 
 # Примеры запуска скриптов
-Для начала, нужно подключить ваш аккаунт Instagram к Instabot, в коде: 
+Запускаем наш скрипт :
 ```
-bot.login(username=secret_user_name, password=secret_user_password) 
+(env) MacBook-Air:instabot user_name$ python3 main.py https://www.instagram.com/p/BrbkCltHo2K/ beautybar.rus
 ```
-Вместо ```secret_user_name``` - ваш никнейм в Instagram<br>
-Вместо ```secret_user_password```- ваш пароль 
-
-
-В функции ```get_check_followers```, нужно так же указать страничку аккаунта , на котором проходит конкурс: 
-```
-def get_check_followers(username_of_participants):
-    main_instagram_followers = bot.get_user_followers('beautybar.rus')
-```
-Вместо ```'beautybar.rus'``` , укажите нужный вам аккаунт
-<br>
-Запускаем наш скрипт 
-```
-(env) MacBook-Air:instabot user_name$ python3 main.py https://www.instagram.com/p/BrbkCltHo2K/
-```
-Где ```https://www.instagram.com/p/BrbkCltHo2K/``` - ссылка на конкурсный пост 
+```https://www.instagram.com/p/BrbkCltHo2K/``` - ссылка на конкурсный пост; <br>
+```beautybar.rus``` - название страницы, где проводится конкурс;
 
 Результат получим следующий : 
 ```
@@ -72,13 +58,18 @@ def get_check_followers(username_of_participants):
 ```
 Где ```['vyvyonthatbeat', 'betweenballoons', 'wanderfordelicious', 'wong.foodie', 'galaxyoverlord', 'exobrandi', 'neverneutral', 'sundaeonasunday_', 'mariseeezy', 'bvcktrack', 'worldismymenu', '_cfooddiet', 'chips_chipster', 'foodiema', 'foodandsachi', 'createwithmi', 'louie.the.foodie']``` - это список участников, которые выполнили условия конкурса.
 
-# Регулярные выражение и основные переменные 
-В коде, для поиска комментариев, которые выполнили условие, мы используем регулярные выражение :
-```
-(?:@)([A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)
-```
-первоисточник и более расширенное описано здесь: <br>
-<a href='https://blog.jstassen.com/2016/03/code-regex-for-instagram-username-and-hashtags/'>https://blog.jstassen.com/2016/03/code-regex-for-instagram-username-and-hashtags/</a><br>
+# Основные переменные 
+
+```instagtam username``` - имя аккаунта в интсаграм;<br>
+```user_id``` - id номер вашего аккаунта;<br>
+```comments``` - коментарии;<br>
+```likes```  - отметки нравятся;<br>
+```follows``` - люди, которые следят за аккаунтом;
+
+
+
+
+
 
 ```secret_user_name``` - логин InstagramPage;<br>
 ```secret_user_password``` - пароль InstagramPage;<br>
