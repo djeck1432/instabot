@@ -11,7 +11,7 @@ import os
 def get_comments(comments):
   comments_from_competition = []
   for comment in comments:
-    participants = re.findall('(?:@)([A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)',comment['text'])
+    participants = re.findall(r'(?:@)([A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)',comment['text'])
     comments_from_competition.append([comment['user_id'],participants])
   return comments_from_competition
 
