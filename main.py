@@ -15,15 +15,10 @@ def get_comments(comments):
     comments_from_competition.append([comment['user_id'],participants])
   return comments_from_competition
 
-def is_users_exist(user_name):
-  return bot.get_user_id_from_username(user_name)  is not None
-
-
 if __name__ == '__main__':
     load_dotenv()
     secret_user_name = os.getenv("INSTAGRAM_USER_NAME")
     secret_user_password = os.getenv("INSTAGRAM_PASSWORD")
-
     bot = Bot()
     bot.login(username=secret_user_name, password=secret_user_password)
 
@@ -33,6 +28,7 @@ if __name__ == '__main__':
     parser.add_argument('user_id', help='Введите ссылку на пост розыграша')
     parser.add_argument('instagram_username', help='Введите названия страницы розыграша')
     args = parser.parse_args()
+
     main_instagram_followers = bot.get_user_followers(args.instagram_username)
     user_id = bot.get_media_id_from_link(args.user_id)
     user_comments = bot.get_media_comments(user_id)
