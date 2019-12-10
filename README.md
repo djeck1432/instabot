@@ -58,27 +58,6 @@ pip3 install requirements.txt
 ```
 Где ```['vyvyonthatbeat', 'betweenballoons', 'wanderfordelicious', 'wong.foodie', 'galaxyoverlord', 'exobrandi', 'neverneutral', 'sundaeonasunday_', 'mariseeezy', 'bvcktrack', 'worldismymenu', '_cfooddiet', 'chips_chipster', 'foodiema', 'foodandsachi', 'createwithmi', 'louie.the.foodie']``` - это список участников, которые выполнили условия конкурса.
 
-# Основные переменные 
-
-```instagtam username``` - имя аккаунта в интсаграм;<br>
-```user_id``` - id номер вашего аккаунта;<br>
-```comments``` - коментарии;<br>
-```likes```  - отметки нравятся;<br>
-```follows``` - люди, которые следят за аккаунтом;
-
-
-
-
-
-
-```secret_user_name``` - логин InstagramPage;<br>
-```secret_user_password``` - пароль InstagramPage;<br>
-```user_comments``` - комментарии, которые оставили под постом о розыгрыше;<br>
- ```users``` - nicknames участников конкурса; <br>
- ```usernames_and_ids``` - nicknames и их id;<br>
- ```all_users_who_liked ``` - участники,которые поставили лайк под постом розыгрыша;<br>
- ```username_of_participants ``` - участники, которые взяли участие в розыгрыше и выполнили 2 условия из 3(оставили комментарий и лайкнули);<br>
-```check_followers``` - юзеры, которые подписаны на страницу, где проходит розыгрыш;<br>
 
 
 
