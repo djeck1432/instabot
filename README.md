@@ -11,36 +11,21 @@
  terminal (MacOs)<br>
  console (Linux) <br>
  акаунт зарегистрированный в Instagram(желательно не основной) 
+ 
+# How to install
+Python3 have to be already installed. Then use pip (or pip3, there is a contravention with Python2) to install dependencies: :<br>
 
-# Как установить
-Откройте терминал/консоль и пропишите следующей код: 
+``` git clone https://github.com/djeck1432/instabot.git ```
 
-```
-git clone https://github.com/djeck1432/instabot.git
-```
-Вы установили репозиторий на свой компьютер, дальше открываем корневую папку проекта: 
-```
-cd instabot
-```
-Что бы избежать конфликт версий библиотек  в Python, установим виртуальное окружение: <br>
-```
-pip3 install virtualenv
-```
-Следующим шагом, создадим виртуальное окружение : <br>
-```
-python3 -m venv env 
-```
-где ```env``` - название, оно может быть любым <br>
+After you downloaded the repository open a folder ```instabot``` using next command: <br>
 
-Для работы, нам нужно включить виртуальное окружение, следующий шаг: 
+```cd instabot```
 
-```
-source env/bin/activate
-```
-Теперь, нужно скачать нужные нам модули и библиотеки: 
-```
-pip3 install requirements.txt
-```
+Now all of the required libraries and modules have to be installed:<br>
+
+```pip install -r requirements.txt ```<br>
+
+Now we are ready for the script.
 
 # Настройки окружения 
 
